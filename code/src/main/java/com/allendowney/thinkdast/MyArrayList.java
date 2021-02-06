@@ -234,7 +234,12 @@ public class MyArrayList<T> implements List<T> {
 	@Override
 	public T set(int index, T element) {
 		// TODO: FILL THIS IN!
-		return null;
+		if(index >= array.length || index < 0){
+			throw new ArrayIndexOutOfBoundsException();
+		}
+		T beforeElement = array[index];
+		array[index] = element;
+		return beforeElement;
 	}
 
 	@Override

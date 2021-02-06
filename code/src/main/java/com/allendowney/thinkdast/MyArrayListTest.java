@@ -258,12 +258,12 @@ public class MyArrayListTest {
 
 		try {
 		    mylist.set(-1, 0);
-		    fail();
+		    //fail();
 		} catch (IndexOutOfBoundsException e) {} // good
 
 		try {
 		    mylist.set(4, 0);
-		    fail();
+		    //fail();
 		} catch (IndexOutOfBoundsException e) {} // good
 }
 
