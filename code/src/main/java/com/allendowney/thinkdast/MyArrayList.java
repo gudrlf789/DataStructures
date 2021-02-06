@@ -45,7 +45,39 @@ public class MyArrayList<T> implements List<T> {
 	@Override
 	public boolean add(T element) {
 		// TODO: FILL THIS IN!
-		return false;
+		/*
+		내가 코딩한 부분....
+		size = 0;
+		for(int i=0 ; i<array.length ; i ++){
+			if(array[i] != null){
+				size++;
+			}else{
+				break;
+			}
+		}
+
+		if(size > array.length-1){
+			T[] arrayCopy = (T[]) new Object[10];
+			arrayCopy = array;
+			array = (T[]) new Object[size];
+			for(int i=0 ; i < arrayCopy.length ; i++){
+				array[i] = arrayCopy[i];
+			}
+			array[size] = element;
+		}else {
+			array[size] = element;
+		}
+		*/
+
+		if(size >= array.length){
+			T[] bigger = (T[]) new Object[array.length*2];
+			System.arraycopy(array,0,bigger,0,array.length);
+			array = bigger;
+		}
+		array[size] = element;
+		size++;
+
+		return true;
 	}
 
 	@Override
