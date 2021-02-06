@@ -143,6 +143,21 @@ public class MyArrayList<T> implements List<T> {
 	@Override
 	public int indexOf(Object target) {
 		// TODO: FILL THIS IN!
+		//int indexNum = -1;
+		for(int i=0 ; i<array.length ; i++){
+			/*
+			내가 코딩한 방식 : 일치하는 값일때 for문을 끈내고 해당 index값을 반환해줬어야 했다.
+			if(array[i] != null && array[i].equals(target)){
+				indexNum = i;
+			}else{
+				indexNum = -1;
+			}
+			 */
+
+			if(equals(target, array[i])){
+				return i;
+			}
+		}
 		return -1;
 	}
 
