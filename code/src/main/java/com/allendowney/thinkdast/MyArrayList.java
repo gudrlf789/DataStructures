@@ -229,7 +229,25 @@ public class MyArrayList<T> implements List<T> {
 	@Override
 	public T remove(int index) {
 		// TODO: FILL THIS IN!
-		return null;
+		T removeElement = array[index];
+		/*
+		내가 작성한 코드
+		for(int i=index; i < array.length; i++){
+			if(index == array.length){
+				array[array.length] = null;
+				break;
+			}
+			array[index] = array[index+1];
+		}
+		*/
+
+		// size -> 요소의 개수
+		for(int i=index; i < size-1 ; i++){
+			array[index] = array[index+1];
+		}
+		size--;
+
+		return removeElement;
 	}
 
 	@Override
